@@ -1,7 +1,10 @@
 const mongoose=require('mongoose');
 
 function getDatabase(){
-    mongoose.connect('mongodb+srv://eonyando89:OesGWHjTvQXOSvdB@express-app.rjary2s.mongodb.net/')
+    let DB_URI=process.env.DB_URI;
+
+
+    mongoose.connect(DB_URI)
 
     let db=mongoose.connection
 
