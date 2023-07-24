@@ -9,6 +9,11 @@ const app=express();
 
 
 let db=getDatabase();
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  next();
+});
+
 app.use(cors({
     origin: '*',
     allowedHeaders: ['Content-Type', 'Authorization'],
